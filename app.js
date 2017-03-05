@@ -6,9 +6,9 @@ var nightmare = Nightmare({ show: true });
 //========================================
 //========================================
 
-var userName = 'username_here'         //put your username here
-var pass = 'password_here'             //put your password here
-var tag = 'tag_here'              //put your tag here
+var userName = 'joanna__doe'         //put your username here
+var pass = 'autopass'             //put your password here
+var tag = 'cat'              //put your tag here
 
 
 //========================================
@@ -21,17 +21,16 @@ logIn();
 function logIn(){
   nightmare
     .goto('https://www.instagram.com/accounts/login/')
-    .type('#react-root > div > article > div > div:nth-child(1) > div > form > div:nth-child(1) > input', userName)
-    .type('#react-root > div > article > div > div:nth-child(1) > div > form > div:nth-child(2) > input', pass)
-    .click('#react-root > div > article > div > div:nth-child(1) > div > form > span > button')
+    .wait('#react-root > section > main > div > article > div > div:nth-child(1) > div > form > div:nth-child(1) > input')
+    .type('#react-root > section > main > div > article > div > div:nth-child(1) > div > form > div:nth-child(1) > input', userName)
+    .type('#react-root > section > main > div > article > div > div:nth-child(1) > div > form > div:nth-child(2) > input', pass)
+    .click('#react-root > section > main > div > article > div > div:nth-child(1) > div > form > span > button')
     .wait(5000)
     .then(function(){
       getURL()
     })
 
 }
-
-
 
 
 function getURL(){
@@ -43,7 +42,6 @@ function getURL(){
       clickLike()
     })
 }
-
 
 
 
